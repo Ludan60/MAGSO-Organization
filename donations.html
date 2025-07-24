@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" style="height: 100%;">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تبرع لدعم منظمة ماجسو - أساتذة الجامعات السودانية. ساهم معنا في دعم التعليم العالي والبحث العلمي في السودان">
+    <meta name="keywords" content="تبرع, دعم, منظمة ماجسو, أساتذة الجامعات, السودان, تعليم, بحث علمي">
+    <title>التبرعات - منظمة ماجسو</title>
+     <!-- Favicon -->
+    <link rel="icon" href="images/log.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/donations.css">
+    
+<style>
+      /* Language Switcher */
+    .language-switcher {
+        margin-left: 0.5rem;
+    }
+    
+    .language-switcher .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 65px;
+    }
+    
+    .language-switcher .btn.active {
+        background-color: #198754;
+        color: white;
+        border-color: #198754;
+    }
+    
+    @media (max-width: 991.98px) {
+        .language-switcher {
+            margin: 0.5rem auto;
+            order: -1;
+        }
+        
+        .navbar-nav {
+            padding-top: 1rem;
+        }
+    }
+    
+    /* Animation for counters */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-counter {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+
+     .custom-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #198754;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+        max-width: 90%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .custom-notification.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/log.jpg" alt="شعار ماجسو" height="50">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="custom-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="about.html">حول المنظمة</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="activities.html">الأنشطة والمشاريع</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="news.html">الأخبار</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                    <li class="nav-item px-2 my-2 my-lg-0 d-flex align-items-center">
+                        <div class="btn-group language-switcher" dir="ltr">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active" data-lang="ar" aria-current="true">العربية</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+                        </div>
+                        <a class="btn btn-success px-3 me-2" href="donations.html">تبرع الآن</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" >
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; position: relative; display: inline-block;">التبرعات</h1>
+            <nav aria-label="breadcrumb" class="animate__animated animate__fadeInUp" style="background: transparent; justify-content: center; padding: 0.5rem 0; margin-top: 20px;">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s ease;">الرئيسية</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color: white;">التبرعات</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bank Accounts Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>حساباتنا البنكية</h2>
+                <p class="text-muted">يمكنك التبرع من خلال الحسابات البنكية التالية</p>
+            </div>
+            
+            <div class="row">
+                <!-- Bank 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 bank-card">
+                        <div class="card-header">
+                            <i class="fas fa-university me-2"></i> بنك فيصل الإسلامي السوداني
+                        </div>
+                        <div class="card-body">
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-user-tie"></i>
+                                <strong>اسم الحساب:</strong> منظمة أساتذة الجامعات السودانية - ماجسو
+                            </div>
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-hashtag"></i>
+                                <strong>رقم الحساب:</strong> 30031110
+                            </div>
+                            <div class="bank-info">
+                                <i class="fas fa-code-branch"></i>
+                                <strong>الفرع:</strong>  بورتسودان
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bank 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 bank-card">
+                        <div class="card-header">
+                            <i class="fas fa-university me-2"></i> بنك الخرطوم
+                        </div>
+                        <div class="card-body">
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-user-tie"></i>
+                                <strong>اسم الحساب:</strong> منظمة أساتذة الجامعات السودانية - ماجسو
+                            </div>
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-hashtag"></i>
+                                <strong>رقم الحساب:</strong> 9626899
+                            </div>
+                            <div class="bank-info">
+                                <i class="fas fa-code-branch"></i>
+                                <strong>الفرع:</strong> كريمة                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bank 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 bank-card">
+                        <div class="card-header">
+                            <i class="fas fa-university me-2"></i> بنك  النيل 
+                        </div>
+                        <div class="card-body">
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-user-tie"></i>
+                                <strong>اسم الحساب:</strong> منظمة أساتذة الجامعات السودانية - ماجسو
+                            </div>
+                            <div class="bank-info mb-3">
+                                <i class="fas fa-hashtag"></i>
+                                <strong>رقم الحساب:</strong> 35182
+                            </div>
+                            <div class="bank-info">
+                                <i class="fas fa-code-branch"></i>
+                                <strong>الفرع:</strong> بورتسودان
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="donation-form">
+                        <h3 class="form-title">إرسال إشعار التبرع</h3>
+                        <p class="text-muted mb-4">يرجى تعبئة النموذج التالي بعد إجراء التحويل البنكي </p>
+                        
+                        <form id="donationForm" novalidate>
+                            <div class="mb-3">
+                                <label for="transactionNumber" class="form-label">رقم العملية البنكية</label>
+                                <input type="text" class="form-control" id="transactionNumber" required>
+                                <div class="invalid-feedback">
+                                    يرجى إدخال رقم العملية البنكية
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="amount" class="form-label">مبلغ التبرع</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="amount" required>
+                                    <span class="input-group-text">SDG</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    يرجى إدخال مبلغ التبرع
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">إرفاق صورة إيصال التحويل</label>
+                                <div class="file-upload">
+                                    <label class="file-upload-btn">
+                                        <i class="fas fa-cloud-upload-alt me-2"></i>
+                                        <span>اضغط لرفع الملف</span>
+                                        <input type="file" id="receipt" accept="image/*" required>
+                                    </label>
+                                    <div class="file-name" id="fileName">لم يتم اختيار ملف</div>
+                                    <div class="invalid-feedback">
+                                        يرجى رفع صورة إيصال التحويل
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">ملاحظات (اختياري)</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="يمكنك إضافة أي ملاحظات إضافية هنا"></textarea>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success btn-lg w-100">
+                                    إرسال
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <p class="text-white-50">منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية</p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/share/194HgfBorQ/" target="_blank" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-white text-decoration-none social-icon"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 text-center">
+                <h5 class="text-success mb-3">روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="footer-link">الرئيسية</a></li>
+                    <li class="mb-2"><a href="about.html" class="footer-link">حول المنظمة</a></li>
+                    <li class="mb-2"><a href="activities.html" class="footer-link">الأنشطة والمشاريع</a></li>
+                    <li class="mb-2"><a href="#team" class="footer-link">فريق العمل</a></li>
+                    <li><a href="contact.html" class="footer-link">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-map-marker-alt me-3 text-success"></i>
+                            <span class="text-white-50">بورتسودان، السودان</span>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-phone me-3 text-success"></i>
+                            <span class="text-white-50">+249 123 456 789</span>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-envelope me-3 text-success"></i>
+                            <span class="text-white-50">info@majso.org</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">التبرعات</h5>
+                <p class="text-white-50 mb-3">تبرعك يساهم في دعم أنشطتنا وبرامجنا التعليمية والتنموية</p>
+                <a href="donations.html" class="btn btn-outline-success btn-sm" style="width: auto; padding-right: 1.5rem; padding-left: 1.5rem;">تبرع الآن</a>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">© 2025 منظمة ماجسو جميع الحقوق محفوظة.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">تصميم وتطوير <a href="https://sirajalmuner.com/" class="text-success text-decoration-none developer-link" target="_blank">السراج المنير</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+     
+    
+    <!-- Custom Toggler Script -->
+    <script>
+        // File upload preview
+        const fileInput = document.getElementById('receipt');
+        const fileName = document.getElementById('fileName');
+        
+        if (fileInput) {
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileName.textContent = this.files[0].name;
+                    fileName.classList.add('text-success');
+                } else {
+                    fileName.textContent = 'لم يتم اختيار ملف';
+                    fileName.classList.remove('text-success');
+                }
+            });
+        }
+
+        // Form validation
+        (function() {
+            'use strict';
+            
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                    
+                    if (form.checkValidity()) {
+                        // Here you can add AJAX form submission
+                        event.preventDefault();
+                        alert('شكراً لتبرعكم! سنتواصل معكم قريباً لتأكيد استلام التبرع.');
+                        form.reset();
+                        form.classList.remove('was-validated');
+                        fileName.textContent = 'لم يتم اختيار ملف';
+                        fileName.classList.remove('text-success');
+                    }
+                }, false);
+            });
+        })();
+    </script>
+
+    <div id="customNotification" class="custom-notification"></div>
+
+    
+
+</body>
+</html>

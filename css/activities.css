@@ -1,0 +1,483 @@
+/* أنماط صفحة الأنشطة */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #27ae60;
+    --accent-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --text-color: #2c3e50;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --container-padding: 15px;
+}
+
+.page-header {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+ url('../images/2.jpg') no-repeat center center/cover;;
+    color: white;
+    padding: 80px 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-header h1 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* أنماط البطاقات */
+.achievement-category {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 40px 0 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-right: 4px solid var(--secondary-color);
+    height: 100%;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-body {
+    padding: 20px 15px;
+}
+
+.achievement-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: var(--transition);
+    line-height: 1.5;
+}
+
+.achievement-item:hover {
+    background-color: #f9f9f9;
+    padding-right: 10px;
+}
+
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.achievement-item .item-text {
+    flex: 1;
+    margin-right: 10px;
+    min-width: 0; /* Prevents flex item from overflowing */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.date-badge {
+    background: #f0f7f4;
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: center;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+/* أنماط الخطط المستقبلية */
+.future-plans {
+    background: #f9f9f9;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin: 60px 0;
+    border: 1px solid #eee;
+}
+
+.plan-category {
+    margin-bottom: 30px;
+}
+
+.plan-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-item {
+    margin-bottom: 15px;
+    padding-right: 30px;
+    position: relative;
+    line-height: 1.6;
+    color: #444;
+}
+
+.plan-item:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    color: var(--secondary-color);
+}
+
+/* تأثيرات الحركة */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* التجاوب مع الشاشات المتوسطة والصغيرة */
+@media (max-width: 991px) {
+    .page-header {
+        padding: 70px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .achievement-card {
+        margin-bottom: 20px;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 15px 0;
+    }
+    
+    .achievement-item .item-text {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .date-badge {
+        margin-right: 0;
+        margin-top: 5px;
+    }
+    
+    .future-plans {
+        padding: 25px 15px;
+        margin: 40px 0;
+    }
+    
+    .card-header {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin: 30px 0 20px;
+    }
+}
+
+/* تحسينات للهواتف المحمولة */
+@media (max-width: 576px) {
+    .page-header {
+        padding: 50px 10px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .achievement-item .item-text {
+        font-size: 0.95rem;
+    }
+    
+    .date-badge {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .card-header {
+        font-size: 0.95rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin: 25px 0 15px;
+    }
+    
+    .achievement-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* ألوان مختلفة لكل قسم */
+.category-1 .card-header { background-color: #3498db; }
+.category-2 .card-header { background-color: #9b59b6; }
+.category-3 .card-header { background-color: #e67e22; }
+.category-4 .card-header { background-color: #1abc9c; }
+.category-5 .card-header { background-color: #e74c3c; }
+
+
+  /* Custom Navbar Toggler */
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .navbar-toggler {
+            padding: 0.5rem 0.75rem;
+            border: none;
+            position: relative;
+        }
+        
+        /* Hide default Bootstrap toggler icon */
+        .navbar-toggler .navbar-toggler-icon {
+            display: none;
+        }
+
+.custom-toggler {
+  display: block;
+  width: 25px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-toggler span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.custom-toggler span:nth-child(1) {
+  top: 0px;
+}
+.custom-toggler span:nth-child(2) {
+  top: 8px;
+}
+.custom-toggler span:nth-child(3) {
+  top: 16px;
+}
+
+.custom-toggler.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.custom-toggler.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.custom-toggler.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}       
+        .back-to-top {
+            transition: all 0.3s ease;
+        }
+        .back-to-top:hover {
+            background-color: #0a3e1f !important;
+            transform: translateY(-3px);
+        }
+        .back-to-top.active {
+            display: block !important;
+        }
+
+
+
+       
+/* Footer Styles */
+.footer-link {
+    color: #fff !important;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    background-color: #198754;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+    right: auto;
+    left: 0;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #198754;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+}
+
+.contact-item {
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.contact-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
+}
+
+.contact-item i {
+    transition: all 0.3s ease;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-item:hover i {
+    transform: scale(1.2);
+    color: #198754 !important;
+}
+
+.btn-donate {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s;
+}
+
+.btn-donate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #198754;
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+.btn-donate:hover {
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+}
+
+.btn-donate:hover::before {
+    width: 100%;
+}
+
+.developer-link {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.developer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+    background-color: #198754;
+    transition: width 0.3s ease;
+}
+
+.developer-link:hover::after {
+    width: 100%;
+}

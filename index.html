@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية">
+    <meta name="keywords" content="ماجسو, أساتذة الجامعات, السودان, تعليم">
+    <title>منظمة أساتذة الجامعات السودانية (ماجسو)</title>
+ <!-- Favicon -->
+    <link rel="icon" href="images/log.jpg"> 
+
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="منظمة أساتذة الجامعات السودانية (ماجسو)" />
+    <meta property="og:description" content="المنظمة الرسمية لأساتذة الجامعات السودانية - نحو تعليم عالي متميز وأبحاث علمية رائدة" />
+    <meta property="og:type" content="website" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <style>
+       /* Swiper Navigation and Pagination */
+.team-swiper {
+    width: 100%; 
+}
+
+/* Hide default Swiper.js arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: ''; 
+    display: none;
+}
+
+/* Style for Font Awesome icons used as Swiper arrows */
+.swiper-button-prev i,
+.swiper-button-next i {
+    color: var(--secondary-color); /* Using CSS variable for green */
+    font-size: 2em; 
+}
+
+/* Position adjustments for Swiper arrows */
+.swiper-button-prev {
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+/* Make click area for Swiper buttons larger without background */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px;  
+    height: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none; /* Ensure no background */
+    border: none;    /* Ensure no border */
+    box-shadow: none; /* Ensure no shadow */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--secondary-color); /* Active pagination dot color */
+}
+
+/* Team Card Styles */
+.team-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Image Container - for centering and overall dimensions */
+.team-img-container {
+    height: 200px; /* Adjust height as needed, ensures consistent card height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Add padding to push content down slightly if needed */
+    background-color: #f8f9fa; /* Light background for the image area */
+}
+
+/* Team Member Image - for circular shape and size */
+.team-member-img {
+    width: 150px; /* Medium size for the circle */
+    height: 150px; /* Same as width to maintain aspect ratio for circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+    border: 4px solid var(--secondary-color); /* A nice border around the image */
+    box-shadow: 0 0 0 8px rgba(39, 174, 96, 0.1); /* Subtle outer glow */
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-member-img {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    border-color: var(--primary-color); /* Change border color on hover */
+    box-shadow: 0 0 0 8px rgba(44, 62, 80, 0.15); /* Adjust glow on hover */
+}
+
+
+.team-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.team-info h4 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.team-info span {
+    color: var(--gray-color);
+    font-size: 0.9em;
+    display: block; /* Ensure it takes full width */
+    margin-bottom: 10px;
+}
+
+.team-info .social-icons a {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.team-info .social-icons a:hover {
+    color: var(--secondary-color);
+}
+    /* Statistics Section Styles */
+    .stat-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .stat-icon {
+        color: #198754; /* Green color */
+        margin-bottom: 1rem;
+    }
+    
+    .stat-icon i {
+        background: rgba(25, 135, 84, 0.1);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .counter {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #198754; /* Green color */
+        margin: 0.5rem 0;
+        direction: ltr;
+        display: inline-block;
+    }
+    
+    /* Responsive Design Fixes */
+    @media (max-width: 1200px) {
+        .container {
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        
+        .stat-card {
+            padding: 1rem;
+        }
+        
+        .stat-icon i {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5em;
+        }
+        
+        .counter {
+            font-size: 2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .stat-card {
+            margin-bottom: 1rem;
+            padding: 1rem 0.5rem;
+        }
+        
+        .stat-icon i {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2em;
+        }
+        
+        .counter {
+            font-size: 1.5rem;
+        }
+        
+        /* Fix for RTL layout on mobile */
+        [dir="rtl"] .row {
+            margin-right: -7.5px;
+            margin-left: -7.5px;
+        }
+        
+        [dir="rtl"] .col-6, 
+        [dir="rtl"] .col-sm-6, 
+        [dir="rtl"] .col-md-3 {
+            padding-right: 7.5px;
+            padding-left: 7.5px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .stat-card {
+            padding: 0.75rem 0.25rem;
+        }
+        
+        .stat-icon i {
+            width: 45px;
+            height: 45px;
+            font-size: 1em;
+        }
+        
+        .counter {
+            font-size: 1.25rem;
+        }
+        
+        /* Ensure text doesn't overflow on small devices */
+        .stat-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+    
+    /* Language Switcher */
+    .language-switcher {
+        margin-left: 0.5rem;
+    }
+    
+    .language-switcher .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 65px;
+    }
+    
+    .language-switcher .btn.active {
+        background-color: #198754;
+        color: white;
+        border-color: #198754;
+    }
+    
+    @media (max-width: 991.98px) {
+        .language-switcher {
+            margin: 0.5rem auto;
+            order: -1;
+        }
+        
+        .navbar-nav {
+            padding-top: 1rem;
+        }
+    }
+    
+    /* Animation for counters */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-counter {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    </style>
+    
+    <!-- Custom Notification -->
+    <style>
+    .custom-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #198754;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+        max-width: 90%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .custom-notification.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+                <a class="navbar-brand" href="index.html">
+                <img src="images/log.jpg" alt="شعار ماجسو" height="50" loading="lazy">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="custom-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#about">حول المنظمة</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#activities">الأنشطة والمشاريع</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#gallery">المعرض</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#news">الأخبار</a>
+                    </li>
+                       <li class="nav-item px-2">
+                        <a class="nav-link" href="#team">فريق العمل </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                     <li class="nav-item px-2 my-2 my-lg-0 d-flex align-items-center">
+                        <div class="btn-group language-switcher" dir="ltr">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active" data-lang="ar" aria-current="true">العربية</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+                        </div>
+                        <a class="btn btn-success px-3 me-2" href="donations.html">تبرع الآن</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero mobile-center">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4 animate__animated animate__fadeInDown">منظمة أساتذة الجامعات السودانية <span class="highlight">ماجسو</span></h1>
+                <div class="divider mx-auto mb-4"></div>
+                <p class="mb-5 animate__animated animate__fadeInUp animate__delay-1s">نحو تعليم عالي متميز وأبحاث علمية رائدة تواكب تطلعات وطننا الحبيب</p>
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-1s text-center d-flex flex-row justify-content-center gap-3 ">
+                    <a href="#about" class="btn btn-outline-primary btn-lg  mb-2 mb-lg-0">اكتشف المزيد</a>
+                    <a href="contact.html" class="btn btn-outline-primary btn-lg mb-2 mb-lg-0">تواصل معنا </a>
+                </div>    
+                <!-- Scroll Indicator -->
+                <div class="scroll-down animate__animated animate__fadeIn animate__delay-2s">
+                    <a href="#about" class="scroll-link">
+                        <span class="mouse">
+                            <span class="wheel"></span>
+                        </span>
+                        <span class="arrow-down"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/7.png" alt="منظمة ماجسو" class="img-fluid rounded shadow" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">حول المنظمة</h2>
+                    <p class="lead text-muted mb-4">منظمة أساتذة الجامعات السودانية - ماجسو</p>
+                    <p class="mb-4">تأسست المنظمة يوم الأربعاء، الثامن من يناير 2025، بمدينة بورتسودان. نتجت عن مبادرة أساتذة الجامعات السودانية لدعم النازحين والزملاء.</p>
+                    <p class="mb-4">نحن نؤمن بدور التعليم العالي والبحث العلمي في بناء الأمم وتطوير المجتمعات. نسعى لتحقيق التميز الأكاديمي والمهني من خلال دعم الأساتذة والباحثين وتطوير المنظومة التعليمية.</p>
+                    <div class="d-flex flex-nowrap gap-3">
+                        <a href="about.html" class="btn btn-primary px-4 flex-shrink-0">المزيد عنا</a>
+                        <a href="#contact" class="btn btn-outline-primary px-4 flex-shrink-0">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Members Counter -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                    <div class="stat-card bg-white rounded shadow-sm h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <h3 class="counter" data-target="500">0</h3>
+                        <p class="text-muted mb-0">عدد الأعضاء</p>
+                    </div>
+                </div>
+                
+                <!-- Visitors Counter -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                    <div class="stat-card bg-white rounded shadow-sm h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-friends fa-2x"></i>
+                        </div>
+                        <h3 class="counter" data-target="10000">0</h3>
+                        <p class="text-muted mb-0">عدد الزوار</p>
+                    </div>
+                </div>
+                
+                <!-- Projects Counter -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                    <div class="stat-card bg-white rounded shadow-sm h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram fa-2x"></i>
+                        </div>
+                        <h3 class="counter" data-target="50">0</h3>
+                        <p class="text-muted mb-0">عدد المشاريع</p>
+                    </div>
+                </div>
+                
+                <!-- News Counter -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                    <div class="stat-card bg-white rounded shadow-sm h-100">
+                        <div class="stat-icon">
+                            <i class="fas fa-newspaper fa-2x"></i>
+                        </div>
+                        <h3 class="counter" data-target="100">0</h3>
+                        <p class="text-muted mb-0">عدد الأخبار</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">أحدث أنشطتنا ومشاريعنا</h2>
+                    <p class="text-muted">تعرف على أبرز إنجازاتنا والبرامج التي ننفذها لخدمة المجتمع الأكاديمي</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 px-2 mb-3">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
+                        <div class="position-relative">
+                            <img src="images/s.png" class="card-img-top" alt="الدعم العيني" loading="lazy">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <span class="badge bg-success px-3 py-2 mb-3 me-3">الدعم العيني</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">توزيع السلال الغذائية</h5>
+                            <p class="card-text text-muted">تقديم الدعم الغذائي للأساتذة في مختلف أنحاء السودان، حيث تم توزيع أكثر من 200 سلة غذائية حتى الآن.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-success"><i class="far fa-calendar-alt me-1"></i> 15 مارس 2025</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 px-2 mb-3">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
+                        <div class="position-relative">
+                            <img src="images/3.jpg" class="card-img-top" alt="الإسناد الأكاديمي" loading="lazy">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <span class="badge bg-success px-3 py-2 mb-3 me-3">الإسناد الأكاديمي</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">دعم طلاب الشهادة السودانية</h5>
+                            <p class="card-text text-muted">برامج دعم تعليمي لطلاب الشهادة السودانية في المناطق المتأثرة بالأحداث.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-success"><i class="far fa-calendar-alt me-1"></i> 10 مارس 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 px-2 mb-3">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
+                        <div class="position-relative">
+                            <img src="images/2.jpg" class="card-img-top" alt="الزيارات والاجتماعات" loading="lazy">
+                            <div class="card-img-overlay d-flex align-items-end p-0">
+                                <span class="badge bg-success  px-3 py-2 mb-3 me-3">الزيارات والاجتماعات</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">اجتماعات تنسيقية مع الجهات المعنية</h5>
+                            <p class="card-text text-muted">عقد سلسلة من الاجتماعات التنسيقية مع الجهات الحكومية والمنظمات الشقيقة.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-success"><i class="far fa-calendar-alt me-1"></i> 5 مارس 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="activities.html" class="btn btn-primary btn-lg px-5">عرض جميع الأنشطة <i class="fas fa-arrow-left me-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- معرض الصور البسيط -->
+    <section id="gallery" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-3">معرض الصور</h2>
+                    <p class="text-muted mb-4">لقطات من أنشطتنا وفعالياتنا</p>
+                </div>
+            </div>
+            
+            <div class="row g-3">
+                <!-- الصف الأول -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/gallery2.jpg" alt="نشاط 1" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/2.jpg" alt="نشاط 2" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/gallery5.jpg" alt="نشاط 3" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/7.png" alt="نشاط 4" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- الصف الثاني -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="gallery-img-container">
+                        <img src="images/2.jpg" alt="نشاط 5" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/6.png" alt="نشاط 6" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/2.jpg" alt="نشاط 7" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- الصف الثالث -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/5.jpg" alt="نشاط 8" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="gallery-img-container">
+                        <img src="images/3.jpg" alt="نشاط 9" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/1.jpg" alt="نشاط 10" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                 <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/gallery1.jpg" alt="نشاط 10" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                      <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/gallery3.jpg" alt="نشاط 10" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                     <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/gallery4.jpg" alt="نشاط 10" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+                   <div class="col-md-6 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="images/3.jpg" alt="نشاط 10" class="img-fluid rounded shadow-sm" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- News Section -->
+    <section id="news" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-4 " >
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-3">آخر الأخبار</h2>
+                    <p class="text-muted">تابع آخر أخبار وأنشطة منظمة ماجسو</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 mb-4">
+                <!-- News Item 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/News2.jpg" class="card-img-top" alt="خبر 1">
+                            <div class="news-date">15 يوليو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">لقاء رئيس الوزراء</h5>
+                            <p class="card-text text-muted mb-3">لقاء الامين العام للمنظمة مع رئيس الوزراء كامل إدريس</p>
+                            <a href="news-details.html?id=1" class="btn btn-outline-primary">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Item 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/2.jpg" class="card-img-top" alt="خبر 2">
+                            <div class="news-date">10 يوليو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">حملة تبرعات ناجحة</h5>
+                            <p class="card-text text-muted mb-3">نجاح حملة التبرعات الشهرية ووصول المساعدات للمستحقين في مختلف المناطق.</p>
+                            <a href="news-details.html?id=2" class="btn btn-outline-primary">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Item 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/3.jpg" class="card-img-top" alt="خبر 3">
+                            <div class="news-date">5 يوليو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ورشة عمل تدريبية</h5>
+                            <p class="card-text text-muted mb-3">تنظيم ورشة عمل تدريبية لأعضاء هيئة التدريس في الجامعات السودانية.</p>
+                            <a href="news-details.html?id=3" class="btn btn-outline-primary">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Item 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/7.png" class="card-img-top" alt="خبر 4">
+                            <div class="news-date">1 يوليو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">توقيع اتفاقية شراكة</h5>
+                            <p class="card-text text-muted mb-3">توقيع اتفاقية شراكة مع مؤسسة تعليمية دولية لتنفيذ برامج تدريبية متخصصة.</p>
+                            <a href="news-details.html?id=4" class="btn btn-outline-primary">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-4">
+                <a href="news.html" class="btn btn-primary px-4">
+                    عرض جميع الأخبار <i class="fas fa-arrow-left me-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- فريق العمل -->
+
+    <section id="team" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">فريق العمل</h2>
+                    <p class="text-muted">تعرف على نخبة من أساتذتنا الأفاضل الذين يقودون مسيرة "ماجسو"</p>
+                </div>
+            </div>
+            <div class="swiper team-swiper">
+                <div class="swiper-wrapper pb-5">
+                    <div class="swiper-slide">
+                        <div class="card team-card">
+                            <div class="team-img-container d-flex justify-content-center align-items-center">
+                                <img src="images/team1.jpg" class="team-member-img" alt="صورة عضو الفريق 1" loading="lazy">
+                            </div>
+                            <div class="card-body team-info">
+                                <h4 class="card-title">بروفيسور محجوب الصديق </h4>
+                                <span class="d-block mb-2">الامين العام</span>
+                                <!-- <div class="social-icons mt-3">
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card team-card">
+                            <div class="team-img-container d-flex justify-content-center align-items-center">
+                                <img src="images/team2.jpg" class="team-member-img" alt="صورة عضو الفريق 2" loading="lazy">
+                            </div>
+                            <div class="card-body team-info">
+                                <h4 class="card-title">د. هادية المبارك</h4>
+                                <span class="d-block mb-2">امين أمانة الإرشاد والتوعية</span>
+                                <!-- <div class="social-icons mt-3">
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card team-card">
+                            <div class="team-img-container d-flex justify-content-center align-items-center">
+                                <img src="images/team3.jpg" class="team-member-img" alt="صورة عضو الفريق 3" loading="lazy">
+                            </div>
+                            <div class="card-body team-info">
+                                <h4 class="card-title">د. عمر بلولة</h4>
+                                <span class="d-block mb-2">نائب رئيس اللجنة التنفيذية الفرعية</span>
+                                <!-- <div class="social-icons mt-3">
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide">
+                        <div class="card team-card">
+                            <div class="team-img-container d-flex justify-content-center align-items-center">
+                                <img src="images/team4.jpg" class="team-member-img" alt="صورة عضو الفريق 4" loading="lazy">
+                            </div>
+                            <div class="card-body team-info">
+                                <h4 class="card-title">بروفيسور احمد زين</h4>
+                                <span class="d-block mb-2">أمين أمانة المال</span>
+                                <!-- <div class="social-icons mt-3">
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="swiper-slide">
+                        <div class="card team-card">
+                            <div class="team-img-container d-flex justify-content-center align-items-center">
+                                <img src="images/team5.jpg" class="team-member-img" alt="صورة عضو الفريق 4" loading="lazy">
+                            </div>
+                            <div class="card-body team-info">
+                                <h4 class="card-title">د. حسن عامر ابوعيسى</h4>
+                                <span class="d-block mb-2">رئيس اللجنة التنفيذيةالعليا</span>
+                                <!-- <div class="social-icons mt-3">
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="swiper-button-next">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+  <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <p class="text-white-50">منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية</p>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://www.facebook.com/share/194HgfBorQ/" target="_blank" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="javascript:void(0);" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="javascript:void(0);" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="javascript:void(0);" class="text-white text-decoration-none social-icon"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 text-center">
+                <h5 class="text-success mb-3">روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="footer-link">الرئيسية</a></li>
+                    <li class="mb-2"><a href="about.html" class="footer-link">حول المنظمة</a></li>
+                    <li class="mb-2"><a href="activities.html" class="footer-link">الأنشطة والمشاريع</a></li>
+                    <li class="mb-2"><a href="news.html" class="footer-link">الأخبار</a></li>
+                    <li><a href="contact.html" class="footer-link">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-map-marker-alt me-3 text-success"></i>
+                            <span class="text-white-50">بورتسودان، السودان</span>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-phone me-3 text-success"></i>
+                            <span class="text-white-50">+249 123 456 789</span>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-envelope me-3 text-success"></i>
+                            <span class="text-white-50">info@majso.org</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">التبرعات</h5>
+                <p class="text-white-50 mb-3">تبرعك يساهم في دعم أنشطتنا وبرامجنا التعليمية والتنموية</p>
+                <a href="donations.html" class="btn btn-outline-success btn-donate">تبرع الآن</a>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">© 2025 منظمة ماجسو. جميع الحقوق محفوظة.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">تصميم وتطوير <a href="https://sirajalmuner.com/" class="text-success text-decoration-none developer-link" target="_blank">السراج المنير</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+ 
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out',
+            offset: 100
+        });
+
+    </script>
+   
+    <!-- Custom Notification Element -->
+    <div id="customNotification" class="custom-notification"></div>
+    
+
+</body>
+</html>

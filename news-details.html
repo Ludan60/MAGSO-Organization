@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل الخبر - منظمة ماجسو</title>
+  <!-- Bootstrap 5 RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/news.css">
+  <!-- Favicon -->
+  <link rel="icon" href="images/log.jpg">
+  <style>
+    .news-details {
+      padding: 100px 0 60px;
+    }
+    .news-image {
+      max-height: 500px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .news-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    .news-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      color: #6c757d;
+    }
+    .news-date {
+      background: #f8f9fa;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-left: 15px;
+    }
+    .news-category {
+      color: #28a745;
+      font-weight: 600;
+    }
+    .news-content {
+      line-height: 1.9;
+      font-size: 1.1rem;
+      color: #495057;
+      margin-bottom: 2rem;
+    }
+    .back-to-news {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    .news-body {
+      background: #fff;
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    @media (max-width: 768px) {
+      .news-title {
+        font-size: 1.8rem;
+      }
+      .news-body {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/log.jpg" alt="شعار ماجسو" height="50">
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+        <span class="custom-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto text-center">
+          <li class="nav-item px-2">
+            <a class="nav-link" href="index.html">الرئيسية</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="about.html">حول المنظمة</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="activities.html">الأنشطة والمشاريع</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link active" href="news.html">الأخبار</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="contact.html">تواصل معنا</a>
+          </li>
+          <li class="nav-item px-2 my-2 my-lg-0 d-flex align-items-center">
+            <div class="btn-group language-switcher" dir="ltr">
+              <button type="button" class="btn btn-sm btn-outline-secondary active" data-lang="ar" aria-current="true">العربية</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+            </div>
+            <a class="btn btn-success px-3 me-2" href="donations.html">تبرع الآن</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Page Header -->
+<header class="page-header" style="background: url('images/hero.jpg') center/cover; padding: 120px 0 80px; position: relative;">
+  <div class="overlay" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.6);"></div>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center text-white">
+        <h1 class="mb-3" id="news-title">عنوان الخبر</h1>
+        <nav aria-label="breadcrumb" dir="rtl">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="text-white">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="news.html" class="text-white">الأخبار</a></li>
+            <li class="breadcrumb-item active text-white-50" aria-current="page" id="breadcrumb-title">تفاصيل الخبر</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- News Details Section -->
+<section class="news-details">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-date" id="news-date">15 يوليو 2025</span>
+            <span class="news-category">أخبار المنظمة</span>
+          </div>
+          
+          <img id="news-image" src="" alt="صورة الخبر" class="img-fluid news-image">
+          
+          <div class="news-content" id="news-content">
+            <!-- سيتم تعبئته عبر JavaScript -->
+          </div>
+          
+     
+          
+          <div class="back-to-news">
+            <a href="news.html" class="btn btn-outline-primary">
+              <i class="fas fa-arrow-right me-2"></i> العودة إلى الأخبار
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <p class="text-white-50">منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية</p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/share/194HgfBorQ/" target="_blank" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-white text-decoration-none social-icon"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 text-center">
+                <h5 class="text-success mb-3">روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="footer-link">الرئيسية</a></li>
+                    <li class="mb-2"><a href="about.html" class="footer-link">حول المنظمة</a></li>
+                    <li class="mb-2"><a href="activities.html" class="footer-link">الأنشطة والمشاريع</a></li>
+                    <li class="mb-2"><a href="news.html" class="footer-link">الأخبار</a></li>
+                    <li><a href="contact.html" class="footer-link">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-map-marker-alt me-3 text-success"></i>
+                            <span class="text-white-50">بورتسودان، السودان</span>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-phone me-3 text-success"></i>
+                            <span class="text-white-50">+249 123 456 789</span>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-envelope me-3 text-success"></i>
+                            <span class="text-white-50">info@majso.org</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">التبرعات</h5>
+                <p class="text-white-50 mb-3">تبرعك يساهم في دعم أنشطتنا وبرامجنا التعليمية والتنموية</p>
+                <a href="donations.html" class="btn btn-outline-success btn-donate">تبرع الآن</a>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0"> 2025 منظمة ماجسو. جميع الحقوق محفوظة.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">تصميم وتطوير <a href="https://sirajalmuner.com/" class="text-success text-decoration-none developer-link" target="_blank">السراج المنير</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/script.js"></script>
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // بيانات الأخبار
+    const newsData = [
+    {
+      id: 1,
+      title: "لقاء رئيس الوزراء",
+      date: "15 يوليو 2025",
+      image: "images/News2.jpg",
+      content: `<p>عقد الأمين العام لمنظمة ماجسو لقاءاً هاماً مع معالي رئيس الوزراء كامل إدريس، حيث تم مناقشة سبل دعم التعليم العالي والبحث العلمي في السودان.</p>
+      <p>تناول اللقاء سبل تعزيز التعاون بين الحكومة والمنظمة في دعم العملية التعليمية وتطوير البحث العلمي، كما تم استعراض أبرز التحديات التي تواجه التعليم العالي في البلاد.</p>
+      <p>أكد معالي رئيس الوزراء على دعم الحكومة الكامل للمنظمة في تحقيق أهدافها النبيلة، معرباً عن تقديره للجهود الكبيرة التي تبذلها في دعم العملية التعليمية.</p>
+      <p>من جانبه، أشاد الأمين العام للمنظمة بالدعم الكبير الذي توليه الحكومة للتعليم العالي، معرباً عن أمله في مزيد من التعاون البناء في الفترة المقبلة.</p>`
+    },
+    {
+      id: 2,
+      title: "حملة تبرعات ناجحة",
+      date: "10 يوليو 2025",
+      image: "images/2.jpg",
+      content: `<p>نجحت حملة التبرعات الشهرية التي أطلقتها منظمة ماجسو في جمع تبرعات قياسية، مما سيمكن من تقديم الدعم للطلاب المحتاجين في مختلف الجامعات السودانية.</p>
+      <p>تمكنت الحملة من توفير منح دراسية كاملة وجزئية لأكثر من 500 طالب وطالبة، بالإضافة إلى توفير المستلزمات الدراسية والكتب الجامعية.</p>
+      <p>تتقدم إدارة المنظمة بالشكر الجزيل لكل من ساهم في إنجاح هذه الحملة، وتؤكد على استمرارها في دعم الطلاب المتفوقين وتمكينهم من إكمال مسيرتهم التعليمية.</p>
+      <p>وتهيب المنظمة بالمحسنين مواصلة دعمهم السخي لبرامجها التعليمية والإنسانية، سعياً منها لتحقيق رسالتها النبيلة في دعم التعليم العالي.</p>`
+    },
+    {
+      id: 3,
+      title: "ورشة عمل تدريبية",
+      date: "5 يوليو 2025",
+      image: "images/3.jpg",
+      content: `<p>نظمت منظمة ماجسو ورشة عمل تدريبية لأعضاء هيئة التدريس في الجامعات السودانية، بمشاركة نخبة من الخبراء والمتخصصين في مجال تطوير المناهج وطرق التدريس.</p>
+      <p>هدفت الورشة إلى تعزيز قدرات الأساتذة في تصميم المناهج الدراسية وفقاً للمعايير العالمية، مع مراعاة احتياجات سوق العمل المحلي والإقليمي.</p>
+      <p>تضمنت الورشة جلسات عملية ونقاشات مكثفة حول أحدث الأساليب التعليمية وتقنيات التدريس الحديثة، مع التركيز على التعلم النشط والتعلم القائم على المشاريع.</p>
+      <p>أكد المشاركون على أهمية هذه الورشة في تطوير العملية التعليمية، معربين عن شكرهم للمنظمة على تنظيم مثل هذه الفعاليات الهامة.</p>`
+    },
+    {
+      id: 4,
+      title: "توقيع اتفاقية شراكة",
+      date: "1 يوليو 2025",
+      image: "images/7.png",
+      content: `<p>وقعت منظمة ماجسو اتفاقية شراكة استراتيجية مع مؤسسة تعليمية دولية رائدة، تهدف إلى تنفيذ برامج تدريبية متخصصة وتطوير المناهج الدراسية في الجامعات السودانية.</p>
+      <p>تأتي هذه الاتفاقية في إطار سعي المنظمة الدائم لتعزيز الشراكات الاستراتيجية مع المؤسسات الأكاديمية والبحثية المحلية والدولية، سعياً منها لتحقيق التميز الأكاديمي والبحثي.</p>
+      <p>وقال الأمين العام للمنظمة إن هذه الاتفاقية تمثل نقلة نوعية في مسيرة المنظمة، وستسهم في رفع كفاءة العملية التعليمية وتطوير المهارات البحثية لأعضاء هيئة التدريس.</p>
+      <p>من جانبها، أعربت المؤسسة الشريكة عن سعادتها بهذه الشراكة، مؤكدةً استعدادها الكامل لدعم المنظمة في تحقيق أهدافها الاستراتيجية.</p>`
+    }
+  ];
+
+  // تحديث السنة الحالية في الفوتر
+  const currentYearElement = document.getElementById('current-year');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
+
+  // استخراج الـ id من الرابط
+  const params = new URLSearchParams(window.location.search);
+  const newsId = parseInt(params.get("id")) || 1; // Default to 1 if no ID provided
+
+  // البحث عن الخبر حسب id
+  const selectedNews = newsData.find(news => news.id === newsId);
+
+  if (selectedNews) {
+    // تحديث عنوان الصفحة
+    document.title = selectedNews.title + ' - منظمة ماجسو';
+    
+    // تحديث عناصر الصفحة
+    updateElementContent("news-title", selectedNews.title);
+    updateElementContent("news-date", selectedNews.date);
+    updateElementAttribute("news-image", "src", selectedNews.image);
+    updateElementAttribute("news-image", "alt", selectedNews.title);
+    updateElementContent("breadcrumb-title", selectedNews.title);
+    updateElementContent("news-content", selectedNews.content, true);
+  } else {
+    // في حالة عدم العثور على الخبر
+    document.querySelector(".news-details .container").innerHTML = `
+      <div class="text-center py-5 my-5">
+        <div class="alert alert-danger" role="alert">
+          <h2 class="alert-heading">عذراً، لم يتم العثور على الخبر المطلوب</h2>
+          <p>قد يكون الخبر غير موجود أو تمت إزالته.</p>
+          <hr>
+          <a href="news.html" class="btn btn-outline-danger mt-3">
+            <i class="fas fa-arrow-right me-2"></i> العودة إلى صفحة الأخبار
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  // Helper functions to safely update elements
+  function updateElementContent(elementId, content, isHTML = false) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      if (isHTML) {
+        element.innerHTML = content;
+      } else {
+        element.textContent = content;
+      }
+    }
+  }
+
+  function updateElementAttribute(elementId, attribute, value) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element[attribute] = value;
+    }
+  }
+
+  // Initialize back to top button if it exists
+  const backToTopButton = document.querySelector('.back-to-top');
+  if (backToTopButton) {
+    // Show/hide back to top button on scroll
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll to top when clicked
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  }); // End of DOMContentLoaded
+</script>
+
+<style>
+  /* أنماط إضافية لزر العودة للأعلى */
+  .back-to-top {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #28a745;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+  }
+  
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    background: #218838;
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  /* تحسينات للطباعة */
+  @media print {
+    .navbar, .back-to-top, .share-buttons, .back-to-news, footer {
+      display: none !important;
+    }
+    
+    .news-details {
+      padding: 0 !important;
+    }
+    
+    .news-body {
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+  }
+</style>
+
+</body>
+</html>

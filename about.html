@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حول المنظمة - منظمة ماجسو</title>
+    <meta name="description" content="تعرف على منظمة أساتذة الجامعات السودانية - ماجسو، أهدافنا، رؤيتنا، ورسالتنا في دعم التعليم العالي والبحث العلمي في السودان">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/log.jpg">
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+
+            
+    /* Language Switcher */
+    .language-switcher {
+        margin-left: 0.5rem;
+    }
+    
+    .language-switcher .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 65px;
+    }
+    
+    .language-switcher .btn.active {
+        background-color: #198754;
+        color: white;
+        border-color: #198754;
+    }
+    
+    @media (max-width: 991.98px) {
+        .language-switcher {
+            margin: 0.5rem auto;
+            order: -1;
+        }
+        
+        .navbar-nav {
+            padding-top: 1rem;
+        }
+    }
+    
+    /* Animation for counters */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-counter {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+
+     .custom-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #198754;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+        max-width: 90%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .custom-notification.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    </style>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/log.jpg" alt="شعار ماجسو" height="50">
+            </a>
+             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="custom-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="about.html">حول المنظمة</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="activities.html">الأنشطة والمشاريع</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="news.html">الأخبار</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                <li class="nav-item px-2 my-2 my-lg-0 d-flex align-items-center">
+                        <div class="btn-group language-switcher" dir="ltr">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active" data-lang="ar" aria-current="true">العربية</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+                        </div>
+                        <a class="btn btn-success px-3 me-2" href="donations.html">تبرع الآن</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">حول المنظمة</h1>
+            <nav aria-label="breadcrumb" class="animate__animated animate__fadeInUp">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">حول المنظمة</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-content">
+                        <h2 class="mb-4">نشأة المنظمة</h2>
+                        <p>منظمة أساتذة الجامعات السودانية - ماجسو تم إجازتها يوم الأربعاء، الثامن من يناير 2025، بمدينة بورتسودان. ونتجت هذه المنظمة عن مبادرة أساتذة الجامعات السودانية لدعم النازحين والزملاء - ماجسو التي بدأت في 16 أغسطس 2024م، بمبادرة أطلقها نفر كريم من مختلف الجامعات السودانية استشعاراً بالظروف التي يمر بها السودان جراء الحرب التي قضت على الأخضر واليابس وظل المواطنين يعانون وأصبح الأستاذ الجامعي يعاني صعوبة العيش والتهجير وفقدان مستقبله.</p>
+                        
+                        <p>منظمة أساتذة الجامعات السودانية هي منظمة مهنية تهدف إلى تعزيز التعليم العالي في السودان وتحسين أوضاع أساتذة الجامعات ودعم المواطنين ومساعدة الحكومة السودانية.</p>
+                        
+                        <div class="row mt-5">
+                            <div class="col-lg-6 mb-4">
+                                <img src="images/7.png" alt="نشاطات المنظمة" class="img-fluid rounded-lg shadow">
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <img src="images/2.jpg" alt="فريق العمل" class="img-fluid rounded-lg shadow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <!-- Objectives -->
+    <section class="about-section pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center mb-5">
+                    <h2>أهدافنا الاستراتيجية</h2>
+                    <div class="divider mx-auto"></div>
+                    <p class="lead">نسعى لتحقيق التميز في التعليم العالي والبحث العلمي من خلال مجموعة من الأهداف الاستراتيجية</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="objective-item">
+                        <h3>تعزيز جودة التعليم العالي</h3>
+                        <p>العمل على تعزيز جودة التعليم في الجامعات السودانية من خلال دعم البحث العلمي، وتطوير البرامج الأكاديمية، وتحسين ظروف التدريس.</p>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <h3>تحسين أوضاع الأساتذة</h3>
+                        <p>تحسين حقوق أساتذة الجامعات وظروف العمل، وتوفير فرص للتدريب والتطوير المهني المستمر.</p>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <h3>دعم المواطنين السودانيين</h3>
+                        <p>تقديم الدعم الشامل للمواطنين من خلال المساعدات الإنسانية، التعليمية، والطبية لتحسين جودة حياتهم.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="objective-item">
+                        <h3>دعم الحكومة السودانية</h3>
+                        <p>التعاون مع الحكومة في تحقيق التنمية المستدامة والمشاركة الفعالة في مشاريع إعادة الإعمار والتنمية.</p>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <h3>تعزيز البحث العلمي</h3>
+                        <p>دعم المشاريع البحثية، توفير فرص للبحث، وتحفيز النشر العلمي في الجامعات السودانية.</p>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <h3>التعاون الدولي</h3>
+                        <p>دعم برامج التبادل الثقافي والبحثي مع الجامعات العالمية والمشاركة في المؤتمرات الدولية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Methods -->
+    <section class="about-section pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center mb-5">
+                        <h2>وسائل وآليات التنفيذ</h2>
+                        <div class="divider mx-auto"></div>
+                    </div>
+                    
+                    <ul class="methods-list">
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>التعاون مع الجهات الحكومية</h4>
+                                <p>التعاون مع وزارة التعليم العالي والجهات الحكومية لتعزيز جهود المنظمة.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>حملات توعوية</h4>
+                                <p>تنظيم حملات توعوية لتعزيز الوعي بأهمية التعليم ودور الأساتذة في المجتمع.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>الدعم الطبي</h4>
+                                <p>التعاون مع المتخصصين في المجال الطبي لتوفير خدمات صحية للمواطنين.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>شراكات دولية</h4>
+                                <p>إنشاء شراكات مع المنظمات الدولية لتعزيز التعاون وتوسيع نطاق الدعم.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>منصة إلكترونية</h4>
+                                <p>تطوير منصة إلكترونية لتسهيل التواصل بين المتطوعين والمستفيدين وتلقي التبرعات.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>برامج تدريبية</h4>
+                                <p>تنظيم برامج تدريبية وتأهيلية للأساتذة والطلاب لتعزيز المهارات الأكاديمية والمهنية.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mission-vision-item">
+                        <h3>الرسالة</h3>
+                        <p>تعزيز التعليم العالي في السودان، تحسين أوضاع أساتذة الجامعات، ودعم المواطنين والحكومة لتحقيق التنمية المستدامة وإعادة الإعمار.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mission-vision-item">
+                        <h3>الرؤية</h3>
+                        <p>منظمة مهنية رائدة تسعى لبناء مجتمع متعلم ومستقر، حيث يساهم الأساتذة في تحسين حياة المواطنين ودعم جهود الحكومة في التنمية والإعمار.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <p class="text-white-50">منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية</p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/share/194HgfBorQ/" target="_blank" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-white text-decoration-none social-icon"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 text-center">
+                <h5 class="text-success mb-3">روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="footer-link">الرئيسية</a></li>
+                    <li class="mb-2"><a href="about.html" class="footer-link">حول المنظمة</a></li>
+                    <li class="mb-2"><a href="activities.html" class="footer-link">الأنشطة والمشاريع</a></li>
+                    <li class="mb-2"><a href="news.html" class="footer-link">الأخبار</a></li>
+                    <li><a href="contact.html" class="footer-link">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-map-marker-alt me-3 text-success"></i>
+                            <span class="text-white-50">بورتسودان، السودان</span>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-phone me-3 text-success"></i>
+                            <span class="text-white-50">+249 123 456 789</span>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-envelope me-3 text-success"></i>
+                            <span class="text-white-50">info@majso.org</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">التبرعات</h5>
+                <p class="text-white-50 mb-3">تبرعك يساهم في دعم أنشطتنا وبرامجنا التعليمية والتنموية</p>
+                <a href="donations.html" class="btn btn-outline-success btn-donate">تبرع الآن</a>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">© 2025 منظمة ماجسو. جميع الحقوق محفوظة.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">تصميم وتطوير <a href="https://sirajalmuner.com/" class="text-success text-decoration-none developer-link" target="_blank">السراج المنير</a></p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Custom Toggler Script -->
+  
+    
+    <!-- Custom Notification Element -->
+    <div id="customNotification" class="custom-notification"></div>
+       <script>
+        // Show custom notification function
+        function showCustomNotification(message, duration = 2000) {
+            const notification = document.getElementById('customNotification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            // Hide after duration
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, duration);
+        }
+    </script>
+</body>
+</html>

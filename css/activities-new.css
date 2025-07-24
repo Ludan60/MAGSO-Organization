@@ -1,0 +1,751 @@
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2c7a7b;
+    --accent-color: #c53030;
+    --light-bg: #f7fafc;
+    --text-color: #2d3748;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --header-height: 70px; /* Added for fixed header spacing */
+}
+
+/* القوائم المنسدلة */
+.achievement-category {
+    margin-bottom: 1.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #e2e8f0;
+}
+
+.achievement-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.category-header {
+    background-color: #0b4925;
+    color: white;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    min-height: 60px; /* Ensure consistent height for touch targets */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+.category-header:hover {
+    background-color:#0b4925;
+    opacity: 0.9;
+}
+
+.category-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.category-header i {
+    transition: var(--transition);
+}
+
+.category-header.collapsed i {
+    transform: rotate(-90deg);
+}
+
+/* Sub-categories styling */
+.sub-category {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+.sub-category:last-child {
+    border-bottom: none;
+}
+
+.sub-category-title {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sub-category-title i {
+    color: var(--accent-color);
+    font-size: 1.1em;
+}
+
+.achievement-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: var(--light-bg);
+}
+
+.achievement-list.show {
+    max-height: 5000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.achievement-item {
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0;
+    transition: var(--transition);
+    border-radius: 6px;
+    border-radius: var(--border-radius);
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: var(--transition);
+    border: 1px solid #e2e8f0;
+}
+
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.achievement-item:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.achievement-number {
+    background: #0b4925;;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.achievement-details {
+    flex: 1;
+}
+
+.achievement-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.achievement-description {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.achievement-date {
+    font-size: 0.85rem;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* التنسيق العام للصفحة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: #f0f4f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../images/2.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    margin-right: 1rem;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* القسم الرئيسي */
+.main-content {
+    padding: 2rem 0 4rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-title p {
+    color: #718096;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+/* التذييل */
+.footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-links a i {
+    font-size: 0.8rem;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-top: 0.25rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* زر العودة للأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+    bottom: 30px;
+}
+
+.back-to-top:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 992px) {
+    .page-header {
+        padding: 4rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .achievement-item {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .achievement-number {
+        margin: 0 auto 0.5rem 0;
+    }
+}
+
+/* Mobile-first responsive styles */
+@media (max-width: 992px) {
+    .category-header {
+        padding: 0.9rem 1rem;
+    }
+    
+    .category-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .sub-category {
+        padding: 1rem;
+    }
+    
+    .achievement-item {
+        padding: 0.9rem 0.5rem;
+    }
+    
+    .achievement-number {
+        min-width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .achievement-title {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .category-header h2 {
+        font-size: 1rem;
+    }
+    
+    .sub-category-title {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .achievement-number {
+        margin-bottom: 0.5rem;
+    }
+    
+    .achievement-date {
+        margin-top: 0.3rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 400px) {
+    .category-header {
+        padding: 0.8rem 0.8rem;
+    }
+    
+    .category-header h2 {
+        font-size: 0.95rem;
+    }
+    
+    .sub-category {
+        padding: 0.8rem;
+    }
+    
+    .achievement-title {
+        font-size: 0.95rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.85rem;
+    }
+}
+/* Page header styles */
+.page-header {
+    padding: 3.5rem 0;
+    margin-top: var(--header-height);
+}
+
+/* Fix for fixed header spacing */
+body {
+    padding-top: var(--header-height);
+}
+
+/* Improve touch targets for mobile */
+.achievement-item {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    transition: var(--transition);
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Improve touch feedback */
+.achievement-item:active {
+    background-color: #f8f9fa;
+    transform: scale(0.99);
+}
+
+/* Ensure proper spacing for fixed header */
+.main-content {
+    padding: 1rem 0;
+}
+    
+/* Responsive typography */
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 2.5rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Fix for the fixed header overlapping content */
+body {
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+/* Ensure proper spacing for fixed header */
+.main-content {
+    padding: 1.5rem 0;
+}
+
+/* Improve accordion usability on mobile */
+.category-header {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch feedback for interactive elements */
+.achievement-item,
+.category-header,
+.btn {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+    
+/* Section title styles */
+.section-title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.section-title h2 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Responsive adjustments for section titles */
+@media (max-width: 768px) {
+    .section-title {
+        margin: 1.5rem 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.4rem;
+    }
+    
+    .section-title p {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Fix for accordion chevron rotation */
+.category-header .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.category-header.collapsed .fa-chevron-down {
+    transform: rotate(-90deg);
+}
+
+/* Ensure proper spacing for accordion content */
+.achievement-list {
+    padding: 0 1rem 1rem;
+}
+
+/* Improve sub-category spacing */
+.sub-category {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments for achievement items */
+.achievement-number {
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.achievement-details {
+    flex: 1;
+}
+
+.achievement-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.achievement-description {
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.achievement-date {
+    font-size: 0.85rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive adjustments for achievement items */
+@media (max-width: 768px) {
+    .achievement-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .achievement-number {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+    
+    .achievement-item {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .achievement-number {
+        margin-bottom: 0.5rem;
+    }
+
+
+@media (max-width: 576px) {
+    .page-header {
+        padding: 3rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .category-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .achievement-title {
+        font-size: 1rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.9rem;
+    }
+}

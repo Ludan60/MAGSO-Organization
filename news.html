@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أخبار وأنشطة - منظمة ماجسو</title>
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/news.css">
+     <!-- Favicon -->
+    <link rel="icon" href="images/log.jpg">
+ <!-- Bootstrap 5 RTL CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/log.jpg" alt="شعار ماجسو" height="50">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="custom-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="about.html">حول المنظمة</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="activities.html">الأنشطة والمشاريع</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link active" href="news.html">الأخبار</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                     <li class="nav-item px-2 my-2 my-lg-0 d-flex align-items-center">
+                        <div class="btn-group language-switcher" dir="ltr">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active" data-lang="ar" aria-current="true">العربية</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+                        </div>
+                        <a class="btn btn-success px-3 me-2" href="donations.html">تبرع الآن</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="news-hero">
+        <div class="container">
+            <h1>أحدث الأخبار والأنشطة</h1>
+            <p>تابع آخر المستجدات وأبرز الفعاليات والأنشطة التي تنظمها منظمة ماجسو</p>
+        </div>
+    </section>
+      <!-- News Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- News Item 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/1.jpg" class="card-img-top" alt="خبر 1">
+                            <div class="news-date">15 يوليو 2025</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">إطلاق مبادرة دعم التعليم العالي</h5>
+                            <p class="card-text flex-grow-1">أطلقت المنظمة مبادرة جديدة لدعم الطلاب في الجامعات السودانية وتوفير المنح الدراسية.</p>
+                            <a href="news-details.html?id=1" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/2.jpg" class="card-img-top" alt="خبر 2">
+                            <div class="news-date">10 يوليو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">حملة تبرعات ناجحة</h5>
+                            <p class="card-text flex-grow-1">نجاح حملة التبرعات الشهرية ووصول المساعدات للمستحقين في مختلف المناطق.</p>
+                            <a href="news-details.html?id=2" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/3.jpg" class="card-img-top" alt="خبر 3">
+                            <div class="news-date">5 يوليو 2025</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">ورشة عمل حول البحث العلمي</h5>
+                            <p class="card-text flex-grow-1">نظمت المنظمة ورشة عمل حول آفاق البحث العلمي في السودان بمشاركة باحثين من مختلف الجامعات.</p>
+                            <a href="news-details.html?id=3" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/5.jpg" class="card-img-top" alt="خبر 4">
+                            <div class="news-date">1 يوليو 2025</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">توقيع اتفاقية تعاون مع وزارة التعليم العالي</h5>
+                            <p class="card-text flex-grow-1">تم توقيع اتفاقية تعاون بين المنظمة ووزارة التعليم العالي لتحسين جودة التعليم الجامعي.</p>
+                            <a href="news-details.html?id=4" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/2.jpg" class="card-img-top" alt="خبر 5">
+                            <div class="news-date">28 يونيو 2025</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">حملة تبرعات لدعم الطلاب المحتاجين</h5>
+                            <p class="card-text flex-grow-1">أطلقت المنظمة حملة لجمع التبرعات لدعم الطلاب غير القادرين على دفع الرسوم الدراسية.</p>
+                            <a href="news-details.html?id=5" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <div class="position-relative">
+                            <img src="images/6.png" class="card-img-top" alt="خبر 6">
+                            <div class="news-date">22 يونيو 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">إطلاق منصة تعليمية إلكترونية</h5>
+                            <p class="card-text flex-grow-1">إطلاق منصة تعليمية إلكترونية متكاملة تتيح للطلاب الوصول للمواد التعليمية والموارد الأكاديمية.</p>
+                            <a href="news-details.html?id=6" class="btn btn-success align-self-start mt-3">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
+        </div>
+    </section>
+       <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <p class="text-white-50">منظمة أساتذة الجامعات السودانية (ماجسو) - المنظمة الرسمية لأساتذة الجامعات السودانية</p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/share/194HgfBorQ/" target="_blank" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white me-3 text-decoration-none social-icon"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-white text-decoration-none social-icon"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 text-center">
+                <h5 class="text-success mb-3">روابط سريعة</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="footer-link">الرئيسية</a></li>
+                    <li class="mb-2"><a href="about.html" class="footer-link">حول المنظمة</a></li>
+                    <li class="mb-2"><a href="activities.html" class="footer-link">الأنشطة والمشاريع</a></li>
+                    <li class="mb-2"><a href="news.html" class="footer-link">الأخبار</a></li>
+                    <li><a href="contact.html" class="footer-link">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-map-marker-alt me-3 text-success"></i>
+                            <span class="text-white-50">بورتسودان، السودان</span>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-phone me-3 text-success"></i>
+                            <span class="text-white-50">+249 123 456 789</span>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class="d-flex align-items-center justify-content-center contact-item">
+                            <i class="fas fa-envelope me-3 text-success"></i>
+                            <span class="text-white-50">info@majso.org</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 text-center">
+                <h5 class="text-success mb-3">التبرعات</h5>
+                <p class="text-white-50 mb-3">تبرعك يساهم في دعم أنشطتنا وبرامجنا التعليمية والتنموية</p>
+                <a href="donations.html" class="btn btn-outline-success btn-donate">تبرع الآن</a>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">© 2025 منظمة ماجسو. جميع الحقوق محفوظة.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">تصميم وتطوير <a href="https://sirajalmuner.com/" class="text-success text-decoration-none developer-link" target="_blank">السراج المنير</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+ 
+<script>
+// إشعار مخصص عند التبديل
+function showCustomNotification(message, duration = 2000) {
+    const notification = document.getElementById('customNotification');
+    notification.textContent = message;
+    notification.classList.add('show');
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, duration);
+}
+
+// اختيار أزرار اللغات
+const langButtons = document.querySelectorAll('.language-switcher .btn');
+
+// إغلاق القائمة في الشاشات الصغيرة بعد اختيار اللغة
+function closeNavbar() {
+    const customToggler = document.querySelector('.custom-toggler');
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (window.innerWidth <= 991) {
+        if (customToggler) customToggler.classList.remove('open');
+        if (navbarCollapse) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            bsCollapse.hide();
+        }
+    }
+}
+
+// تفعيل أزرار التبديل
+langButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        // إزالة التفعيل من كل الأزرار
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        // تفعيل الزر المضغوط عليه
+        this.classList.add('active');
+        // إغلاق القائمة لو على شاشة صغيرة
+        closeNavbar();
+        // الحصول على اللغة المختارة
+        const lang = this.getAttribute('data-lang');
+
+        // عرض إشعار حسب اللغة
+        if (lang === 'en') {
+            showCustomNotification('جاري التبديل إلى النسخة الإنجليزية...', 1500);
+            // يمكنك توجيه المستخدم لصفحة إنجليزية هنا مثلاً:
+            // window.location.href = 'index-en.html';
+        } else {
+            showCustomNotification('Switching to Arabic version...', 1500);
+            // مثال: window.location.href = 'index-ar.html';
+        }
+    });
+});
+
+</script>
+<!-- Custom Notification Element -->
+
+<div id="customNotification" class="custom-notification"></div>
+    </body>
+    </html>
+
